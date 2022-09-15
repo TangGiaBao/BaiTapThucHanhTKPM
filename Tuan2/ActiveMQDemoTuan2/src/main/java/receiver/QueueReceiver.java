@@ -14,7 +14,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import org.apache.log4j.BasicConfigurator;
 
-public class QueueReceiver { 
+public class QueueReceiver {  
 	public static void main(String[] args) throws Exception {
 		BasicConfigurator.configure();
 		Properties settings = new Properties();

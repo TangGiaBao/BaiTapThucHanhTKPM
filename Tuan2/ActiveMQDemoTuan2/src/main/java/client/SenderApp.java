@@ -22,7 +22,7 @@ import org.apache.log4j.BasicConfigurator;
 import data.Person;
 import helper.XMLConvert;
 
-public class SenderApp {
+public class SenderApp { 
 
 	public static JTextField motto1;
 	public static Message msg;
