@@ -37,13 +37,15 @@ public class QueueSender {
 		//create producer
 		MessageProducer producer = session.createProducer(destination);
 		//create text message
-		Message msg = session.createTextMessage("Hi Tang Gia Bao, This is a mesage from ActiveMQ");
+		Message msg = session.createTextMessage("Hi Gia Bao, This is a mesage from ActiveMQ");
 		producer.send(msg);
-		Person p = new Person(1002, "Tang Gia Bao", new Date());
+		Person p = new Person(1002, "TangGiaBao", new Date());
 		String xml = new XMLConvert<Person>(p).object2XML(p);
 		msg = session.createTextMessage(xml);
-		producer.send(msg);
+		producer.send(msg); 
 		session.close();
+		
+		
 		con.close();
 		System.out.println("Finished....");
 	}

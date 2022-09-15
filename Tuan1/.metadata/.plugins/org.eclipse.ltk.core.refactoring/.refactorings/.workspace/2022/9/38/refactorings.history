@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ActiveMQDemoTuan2&apos; to &apos;ActiveMQTuan1&apos;" description="Rename resource &apos;ActiveMQDemoTuan2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ActiveMQDemoTuan2" name="ActiveMQTuan1" stamp="1663240473066" updateReferences="true"/>
+</session>
