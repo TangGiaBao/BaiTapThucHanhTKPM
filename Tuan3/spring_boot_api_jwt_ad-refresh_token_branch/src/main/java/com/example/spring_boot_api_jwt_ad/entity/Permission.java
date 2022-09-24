@@ -12,9 +12,9 @@ import javax.persistence.Table;
 @Setter
 public class Permission extends BaseEntity {
 
-	private String permissionName;
+    private String permissionName;
 
-	private String permissionKey;
+    private String permissionKey;
 
 	public String getPermissionName() {
 		return permissionName;
@@ -31,20 +31,7 @@ public class Permission extends BaseEntity {
 	public void setPermissionKey(String permissionKey) {
 		this.permissionKey = permissionKey;
 	}
-
-	public Permission(String permissionName, String permissionKey) {
-		super();
-		this.permissionName = permissionName;
-		this.permissionKey = permissionKey;
-	}
-
-	public Permission() {
-		super();
-	}
-
-	@Override
-	public String toString() {
-		return "Permission [permissionName=" + permissionName + ", permissionKey=" + permissionKey + "]";
-	}
+    
+    
 
 }

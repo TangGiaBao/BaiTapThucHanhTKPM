@@ -17,23 +17,23 @@ import java.util.Date;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String deleted;
+    private String deleted;
 
-	@CreatedDate
-	private Date createdAt;
+    @CreatedDate
+    private Date createdAt;
 
-	@LastModifiedDate
-	private Date updatedAt;
+    @LastModifiedDate
+    private Date updatedAt;
 
-	private Long createdBy;
+    private Long createdBy;
 
-	private Long updatedBy;
+    private Long updatedBy;
 
 	public Long getId() {
 		return id;
@@ -86,26 +86,6 @@ public abstract class BaseEntity implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	public BaseEntity() {
-		super();
-	}
-
-	public BaseEntity(Long id, String deleted, Date createdAt, Date updatedAt, Long createdBy, Long updatedBy) {
-		super();
-		this.id = id;
-		this.deleted = deleted;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-		this.createdBy = createdBy;
-		this.updatedBy = updatedBy;
-	}
-
-	@Override
-	public String toString() {
-		return "BaseEntity [id=" + id + ", deleted=" + deleted + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
-				+ ", createdBy=" + createdBy + ", updatedBy=" + updatedBy + "]";
-	}
-	
-	
+    
+    
 }

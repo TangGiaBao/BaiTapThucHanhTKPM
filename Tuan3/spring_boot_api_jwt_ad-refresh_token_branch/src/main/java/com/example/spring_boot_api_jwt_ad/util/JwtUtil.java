@@ -25,7 +25,7 @@ public class JwtUtil {
     private static final String SECRET = "hey Mr Tien the secrect length must be at least 256 bits" +
                                              " please no reveal!";
 
-    public String generateToken(UserPrincipal user) {
+    public String generateToken(UserPrincipal user) { 
         String token = null;
         try {
             JWTClaimsSet.Builder builder = new JWTClaimsSet.Builder();

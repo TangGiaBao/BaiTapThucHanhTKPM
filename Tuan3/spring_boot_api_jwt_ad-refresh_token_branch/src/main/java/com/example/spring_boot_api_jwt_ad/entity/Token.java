@@ -14,10 +14,10 @@ import java.util.Date;
 @Setter
 public class Token extends BaseEntity {
 
-	@Column(length = 1000)
-	private String token;
+    @Column(length = 1000)
+    private String token;
 
-	private Date tokenExpDate;
+    private Date tokenExpDate;
 
 	public String getToken() {
 		return token;
@@ -34,20 +34,7 @@ public class Token extends BaseEntity {
 	public void setTokenExpDate(Date tokenExpDate) {
 		this.tokenExpDate = tokenExpDate;
 	}
-
-	public Token() {
-		super();
-	}
-
-	public Token(String token, Date tokenExpDate) {
-		super();
-		this.token = token;
-		this.tokenExpDate = tokenExpDate;
-	}
-
-	@Override
-	public String toString() {
-		return "Token [token=" + token + ", tokenExpDate=" + tokenExpDate + "]";
-	}
+    
+    
 
 }

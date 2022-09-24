@@ -13,9 +13,13 @@ import java.util.Set;
 @Setter
 public class Role extends BaseEntity {
 
-	private String roleName;
+    private String roleName;
 
-	private String roleKey;
+    private String roleKey;
+
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinTable(name = "t_role_permission", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "permission_id")})
+    private Set<Permission> permissions = new HashSet<>();
 
 	public String getRoleName() {
 		return roleName;
@@ -40,26 +44,6 @@ public class Role extends BaseEntity {
 	public void setPermissions(Set<Permission> permissions) {
 		this.permissions = permissions;
 	}
-
-	public Role() {
-		super();
-	}
-
-	public Role(String roleName, String roleKey, Set<Permission> permissions) {
-		super();
-		this.roleName = roleName;
-		this.roleKey = roleKey;
-		this.permissions = permissions;
-	} 
-
-	@Override
-	public String toString() {
-		return "Role [roleName=" + roleName + ", roleKey=" + roleKey + ", permissions=" + permissions + "]";
-	}
-
-	@OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-	@JoinTable(name = "t_role_permission", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "permission_id") })
-	private Set<Permission> permissions = new HashSet<>();
-
+    
+    
 }

@@ -1,5 +1,6 @@
 package com.example.spring_boot_api_jwt_ad.entity;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,25 +14,15 @@ import java.util.Set;
 @Setter
 public class User extends BaseEntity {
 
-	private String username;
+    private String username;
 
-	private String password;
+    private String password;
 
-	@Override
-	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", roles=" + roles + "]";
-	}
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinTable(name = "t_user_role", joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
 
-	public User(String username, String password, Set<Role> roles) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.roles = roles;
-	}
-
-	public User() {
-		super();
-	}
+    private Set<Role> roles = new HashSet<>();
 
 	public String getUsername() {
 		return username;
@@ -57,10 +48,6 @@ public class User extends BaseEntity {
 		this.roles = roles;
 	}
 
-	@OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-	@JoinTable(name = "t_user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "role_id") })
 
-	private Set<Role> roles = new HashSet<>();
-
+    
 }

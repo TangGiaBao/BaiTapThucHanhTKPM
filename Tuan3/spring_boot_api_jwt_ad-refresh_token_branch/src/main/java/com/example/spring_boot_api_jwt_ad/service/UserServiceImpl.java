@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
             Set<String> authorities = new HashSet<>();
 
-            if (null != user.getRoles())  
+            if (null != user.getRoles())
 
                 user.getRoles().forEach(r -> {
                 authorities.add(r.getRoleKey());

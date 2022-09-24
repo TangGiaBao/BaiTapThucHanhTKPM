@@ -14,15 +14,33 @@ import java.util.Collection;
 
 
 @Getter@Setter
-public class UserPrincipal implements UserDetails { 
+public class UserPrincipal implements UserDetails {
     private Long userId;
     private String username;
     private String password;
     private Collection authorities;
-    
-    
 
-    public Long getUserId() {
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    } 
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
+
+	public Long getUserId() {
 		return userId;
 	}
 
@@ -32,7 +50,7 @@ public class UserPrincipal implements UserDetails {
 
 	public String getUsername() {
 		return username;
-	} 
+	}
 
 	public void setUsername(String username) {
 		this.username = username;
@@ -53,24 +71,6 @@ public class UserPrincipal implements UserDetails {
 	public void setAuthorities(Collection authorities) {
 		this.authorities = authorities;
 	}
-
-	@Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
+    
+    
 }

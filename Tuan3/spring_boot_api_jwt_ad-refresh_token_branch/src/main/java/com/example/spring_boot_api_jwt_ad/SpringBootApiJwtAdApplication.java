@@ -10,8 +10,8 @@ public class SpringBootApiJwtAdApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(SpringBootApiJwtAdApplication.class, args);   
+        SpringApplication.run(SpringBootApiJwtAdApplication.class, args);
     }
- 
+
 }
  
