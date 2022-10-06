@@ -36,7 +36,7 @@ class ApplicationTests {
 		}
 	}
 
-//  2. Cho biết các loại máy bay có tầm bay lớn hơn 10,000km.
+//  2. Cho biết các loại máy bay có tầm bay lớn hơn 10,000kmm.
 	@Test
 	void testCau2() {
 		List<String> mayBays = mayBayService.findByTamBayLonHon10000();
