@@ -10,7 +10,7 @@ import com.se.springbootcruddemo.entity.ChuyenBay;
 
 public interface ChuyenBayRespository extends JpaRepository<ChuyenBay, String>  {
 	
-//	1.Cho biết các chuyến bay đi Đà Lạt (DAD)
+//	1.Cho biết các chuyến bay đi Đà Lạt (DAD).
 	public List<ChuyenBay> findByGaDen(String gaDen);
 	
 //  4.Cho biết các chuyến bay có độ dài đường bay nhỏ hơn 10.000km và lớn hơn 8.000km.

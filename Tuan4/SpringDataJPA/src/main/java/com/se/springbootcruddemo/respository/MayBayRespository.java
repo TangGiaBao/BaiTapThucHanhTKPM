@@ -25,7 +25,7 @@ public interface MayBayRespository extends JpaRepository<MayBay, Integer>  {
 			+ "group by maybay.MaMB", nativeQuery = true)
 	public List<String> findMaByNameNguyen();
 
-//	13. Cho biết các loại máy bay có thể thực hiện chuyến bay VN280
+//	13. Cho biết các loại máy bay có thể thực hiện chuyến bay VN280.
 	@Query(value = "select Loai from maybay where TamBay < (select DoDai from chuyenbay where MaCB = 'VN280')", nativeQuery = true)
 	public List<String> findLoaiByCBVN280();
 //	16. Với mỗi loại máy bay có phi công lái cho biết mã số, loại máy báy và tổng số phi công có thể lái loại máy bay đó.

@@ -55,7 +55,7 @@ class ApplicationTests {
 			System.out.println(nhanVien);
 		}
 	}
-//	4. Cho biết các chuyến bay có độ dài đường bay nhỏ hơn 10.000km và lớn hơn 8.000km
+//	4. Cho biết các chuyến bay có độ dài đường bay nhỏ hơn 10.000km và lớn hơn 8.000km.
 	@Test
 	void testCau4() {
 		List<ChuyenBay> chuyenBays = chuyenBayService.findByDoDaiDBNhoHon10000VaLoHon8000();

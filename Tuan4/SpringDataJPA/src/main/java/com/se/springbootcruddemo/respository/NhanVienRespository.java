@@ -30,7 +30,7 @@ public interface NhanVienRespository extends JpaRepository<NhanVien, String>  {
 			+ "where ([Loai] like '%Boeing%' or [Loai] like '%Airbus%')\r\n"
 			+ "group by nhanvien.MaNV", nativeQuery = true)
 	public List<String> findMaByNVLaiBoeingVaAirbus();
-//	15. Cho biết tên của các phi công lái máy bay Boein
+//	15. Cho biết tên của các phi công lái máy bay Boeing.
 	@Query(value = "SELECT        nhanvien.Ten\r\n"
 			+ "FROM            chungnhan INNER JOIN\r\n"
 			+ "                         maybay ON chungnhan.MaMB = maybay.MaMB INNER JOIN\r\n"
